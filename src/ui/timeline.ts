@@ -65,15 +65,6 @@ export function renderTimeline(day: DaySchedule, filters: ActiveFilters): void {
   body.className = 'timeline-body'
   body.style.width = `${totalWidth}px`
 
-  // Hour lines
-  for (let min = day.timeRangeStart; min <= day.timeRangeEnd; min += 30) {
-    const x = (min - day.timeRangeStart) * pxPerMinute
-    const line = document.createElement('div')
-    line.className = min % 60 === 0 ? 'hour-line' : 'hour-line half'
-    line.style.left = `${x}px`
-    body.appendChild(line)
-  }
-
   // Separate generals and regulars
   const generals = day.entries.filter(e => e.isGeneral)
   const regulars = day.entries.filter(e => !e.isGeneral)
@@ -97,14 +88,11 @@ export function renderTimeline(day: DaySchedule, filters: ActiveFilters): void {
   }
 
   // Regular lanes
-  const regularOffset = generalLaneCount * 32
   const maxRegularLane = regulars.length > 0 ? Math.max(...regulars.map(e => e.lane)) : generalLaneCount - 1
 
   for (let lane = generalLaneCount; lane <= maxRegularLane; lane++) {
     const row = document.createElement('div')
     row.className = 'lane-row'
-    row.style.position = 'relative'
-    row.style.top = `${regularOffset + (lane - generalLaneCount) * 44}px`
 
     const laneEntries = regulars.filter(e => e.lane === lane)
     for (const entry of laneEntries) {
@@ -114,8 +102,19 @@ export function renderTimeline(day: DaySchedule, filters: ActiveFilters): void {
     body.appendChild(row)
   }
 
-  const totalHeight = regularOffset + (maxRegularLane - generalLaneCount + 1) * 44 + 20
+  const regularLaneCount = maxRegularLane - generalLaneCount + 1
+  const totalHeight = generalLaneCount * 32 + regularLaneCount * 44 + 20
   body.style.height = `${totalHeight}px`
+
+  // Hour lines — created after totalHeight is known so they span full height
+  for (let min = day.timeRangeStart; min <= day.timeRangeEnd; min += 30) {
+    const x = (min - day.timeRangeStart) * pxPerMinute
+    const line = document.createElement('div')
+    line.className = min % 60 === 0 ? 'hour-line' : 'hour-line half'
+    line.style.left = `${x}px`
+    line.style.height = `${totalHeight}px`
+    body.appendChild(line)
+  }
 
   // NOW line
   const today = new Date().toISOString().slice(0, 10)
@@ -145,6 +144,17 @@ export function renderTimeline(day: DaySchedule, filters: ActiveFilters): void {
   }
 
   container.appendChild(body)
+
+  // Auto-scroll to current time
+  const wrapper = document.getElementById('timeline-wrapper')!
+  const scrollNow = new Date()
+  const scrollNowMin = scrollNow.getHours() * 60 + scrollNow.getMinutes()
+  if (day.date === today && scrollNowMin >= day.timeRangeStart && scrollNowMin <= day.timeRangeEnd) {
+    const nowX = (scrollNowMin - day.timeRangeStart) * pxPerMinute
+    wrapper.scrollLeft = Math.max(0, nowX - wrapper.clientWidth / 3)
+  } else {
+    wrapper.scrollLeft = 0
+  }
 
   // Update finals summary
   updateFinalsSummary(day, filters)

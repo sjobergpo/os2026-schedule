@@ -30,8 +30,8 @@
 .hour-line {
   position: absolute;
   top: 0;
-  bottom: 0;
   width: 1px;
+  height: 100%;
   background: var(--border-subtle);
   z-index: 1;
   pointer-events: none;
@@ -75,6 +75,22 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
   color: #000;
   border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.event-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(0, 0, 0, 0.08) 75%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 .event-bar:hover, .event-bar:focus-visible {

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OS 2026 - TV-tablå</title>
+  <meta name="description" content="TV-tablå för OS 2026 i Milano-Cortina - SVT Play & TV4 Play" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <h1>OS 2026 <span>TV-tablå</span></h1>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Byt tema"></button>
+    </header>
+    <nav class="date-nav-container" aria-label="Välj dag" role="navigation">
+      <div class="date-nav" id="date-nav" role="tablist"></div>
+    </nav>
+    <div class="finals-summary" id="finals-summary"></div>
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-toggle-btn" id="filter-toggle">Filter</button>
+      <div class="filter-group finals-filter" id="finals-filter-group"></div>
+      <div class="filter-separator"></div>
+      <div class="filter-group sport-filters" id="sport-filters"></div>
+      <div class="filter-separator"></div>
+      <div class="filter-group channel-filters" id="channel-filters"></div>
+    </div>
+    <div class="timeline-wrapper" id="timeline-wrapper">
+      <div class="timeline" id="timeline"></div>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
+  <script type="module" src="/src/ui/main.ts"></script>
+</body>
+</html>

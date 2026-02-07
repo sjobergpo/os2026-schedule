@@ -1,0 +1,74 @@
+:root {
+  --bg-primary: #0F1117;
+  --bg-surface: #1A1D27;
+  --bg-surface-elevated: #242836;
+  --text-primary: #E8E9ED;
+  --text-secondary: #9BA1B0;
+  --text-muted: #5C6274;
+  --border-subtle: #2E3344;
+  --accent-now: #EF4444;
+  --finals-gold: #D4A017;
+  --finals-glow: rgba(212, 160, 23, 0.35);
+
+  --sport-alpine: #60A5FA;
+  --sport-biathlon: #34D399;
+  --sport-bobsled: #A78BFA;
+  --sport-ceremony: #F9A825;
+  --sport-cross-country: #4ADE80;
+  --sport-curling: #F87171;
+  --sport-figure-skating: #F0ABFC;
+  --sport-freestyle: #38BDF8;
+  --sport-general: #6B7280;
+  --sport-ice-hockey: #FB923C;
+  --sport-luge: #C084FC;
+  --sport-nordic-combined: #2DD4BF;
+  --sport-short-track: #FBBF24;
+  --sport-skeleton: #A3A3A3;
+  --sport-ski-jumping: #22D3EE;
+  --sport-ski-mountaineering: #86EFAC;
+  --sport-snowboard: #FF6B9D;
+  --sport-speed-skating: #FCD34D;
+
+  --px-per-hour: 120;
+  --lane-height: 44px;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+.light-mode {
+  --bg-primary: #F8F9FC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F1F3F9;
+  --text-primary: #1A1D27;
+  --text-secondary: #5C6274;
+  --text-muted: #9BA1B0;
+  --border-subtle: #E2E5ED;
+
+  --sport-alpine: #3B82F6;
+  --sport-biathlon: #10B981;
+  --sport-bobsled: #8B5CF6;
+  --sport-ceremony: #D97706;
+  --sport-cross-country: #22C55E;
+  --sport-curling: #EF4444;
+  --sport-figure-skating: #D946EF;
+  --sport-freestyle: #0EA5E9;
+  --sport-general: #6B7280;
+  --sport-ice-hockey: #EA580C;
+  --sport-luge: #A855F7;
+  --sport-nordic-combined: #14B8A6;
+  --sport-short-track: #EAB308;
+  --sport-skeleton: #737373;
+  --sport-ski-jumping: #06B6D4;
+  --sport-ski-mountaineering: #4ADE80;
+  --sport-snowboard: #F43F5E;
+  --sport-speed-skating: #CA8A04;
+}
+
+@media (max-width: 1024px) {
+  :root { --px-per-hour: 80; }
+}
+@media (max-width: 768px) {
+  :root { --px-per-hour: 60; }
+}

@@ -514,7 +514,7 @@
     "start": "10:25",
     "end": "13:40",
     "sport": "Short Track",
-    "event": "Short track",
+    "event": "Kortbaneskridskor",
     "channel": "SVT",
     "isFinal": false,
     "hasSweden": false
@@ -994,7 +994,7 @@
     "start": "20:10",
     "end": "22:20",
     "sport": "Short Track",
-    "event": "Short track",
+    "event": "Kortbaneskridskor",
     "channel": "SVT",
     "isFinal": false,
     "hasSweden": false
@@ -1354,7 +1354,7 @@
     "start": "20:10",
     "end": "23:05",
     "sport": "Short Track",
-    "event": "Short track",
+    "event": "Kortbaneskridskor",
     "channel": "SVT",
     "isFinal": false,
     "hasSweden": false
@@ -1654,7 +1654,7 @@
     "start": "10:55",
     "end": "13:15",
     "sport": "Short Track",
-    "event": "Short track",
+    "event": "Kortbaneskridskor",
     "channel": "SVT",
     "isFinal": false,
     "hasSweden": false
@@ -2104,7 +2104,7 @@
     "start": "20:10",
     "end": "22:10",
     "sport": "Short Track",
-    "event": "Short track",
+    "event": "Kortbaneskridskor",
     "channel": "SVT",
     "isFinal": false,
     "hasSweden": false
@@ -2374,7 +2374,7 @@
     "start": "20:10",
     "end": "22:40",
     "sport": "Short Track",
-    "event": "Short track final",
+    "event": "Kortbaneskridskor final",
     "channel": "SVT",
     "isFinal": true,
     "hasSweden": false

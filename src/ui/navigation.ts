@@ -34,7 +34,7 @@ const SPORT_SWEDISH: Record<string, string> = {
   'Ice Hockey': 'Ishockey',
   'Luge': 'Rodel',
   'Nordic Combined': 'Nordisk kombination',
-  'Short Track': 'Short track',
+  'Short Track': 'Kortbaneskridskor',
   'Skeleton': 'Skeleton',
   'Ski Jumping': 'Backhoppning',
   'Ski Mountaineering': 'Skidalpinism',
